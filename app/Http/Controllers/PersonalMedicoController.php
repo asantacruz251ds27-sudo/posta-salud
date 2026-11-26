@@ -64,6 +64,19 @@ public function index(Request $request)
 
     // Cuentas de rol personal_medico que aún no tienen ficha
     // (más la del propio profesional, cuando se edita)
+
+    public function cambiarEstado(PersonalMedico $personalMedico)
+{
+    $personalMedico->update([
+        'activo' => ! $personalMedico->activo,
+    ]);
+
+    $accion = $personalMedico->activo ? 'activado' : 'desactivado';
+
+    return redirect()->route('personal-medico.show', $personalMedico)
+        ->with('ok', "Profesional {$accion} correctamente.");
+}
+
     private function cuentasDisponibles(?PersonalMedico $medico = null)
     {
         return User::where('rol', 'personal_medico')
