@@ -32,7 +32,7 @@
     </form>
 
     <p><a href="{{ route('personal-medico.create') }}" role="button">
-        + Registrar profesional</a></p>
+        + Nuevo Medico</a></p>
 
     <table>
         <thead>

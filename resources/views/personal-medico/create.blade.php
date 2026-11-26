@@ -3,7 +3,7 @@
 @section('titulo', 'Registrar profesional')
 
 @section('contenido')
-    <h1>Registrar profesional</h1>
+    <h1>Registrar Medico</h1>
 
     <form method="POST" novalidate
           action="{{ route('personal-medico.store') }}">
